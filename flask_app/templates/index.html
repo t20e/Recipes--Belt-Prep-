@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css' )}}">
+    <title>Home Page</title>
+</head>
+<body>
+    <div id="main_div">
+        <!-- contains all divs -->
+        <div class="cotains_both_reg_login">
+            <div id="register">
+                <!-- contains all register div  -->
+                <h2>Register</h2>
+                <form action="/reg_user" method="post">
+                    <!-- reg user  -->
+                    <div class="form_container">
+                        <label for="first_name">First Name:</label>
+                        <input type="text" name="first_name">
+                    </div>
+                    <div class="form_container">
+                        <label for="last_name">Last Name:</label>
+                        <input type="text" name="last_name">
+                    </div>
+                    <div class="form_container">
+                        <label for="email">Email:</label>
+                        <input type="text" name="email">
+                    </div>
+                    <div class="form_container">
+                        <label for="password">Password:</label>
+                        <input type="text" name="password">
+                    </div>
+                    <div class="form_container">
+                        <label for="confirm_password">Confirm Password:</label>
+                        <input type="text" name="confirm_password">
+                    </div>
+                    <div class="form_container">
+                        <input class="btn" type="submit" value="Register">
+                    </div>
+                    </form>
+            </div>
+            <div id="login">
+                <!-- contains all login div  -->
+                <h2>login</h2>
+                <form action="/login" method="post">
+                    <!-- reg user  -->
+                    <div class="form_container">
+                        <label for="email">Email:</label>
+                        <input type="text" name="email">
+                    </div>
+                    <div class="form_container">
+                        <label for="password">Password:</label>
+                        <input type="text" name="password">
+                    </div>
+                    <div class="form_container">
+                        <input class="btn" type="submit" value="Login">
+                    </div>
+                    </form>
+            </div>
+        </div>
+        <div class="contains_error_div">
+            {% with messages = get_flashed_messages() %}
+                {% if messages%}
+                    <div class="errors">
+                        <!-- declare a variable called messages -->
+                        {% if messages %}
+                        <!-- check if there are any messages -->
+                            {% for message in messages %}
+                            <!-- loop through the messages -->
+                                <p class="p">{{message}}</p> <!-- display each message in a paragraph tag -->
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+</body>
+</html>

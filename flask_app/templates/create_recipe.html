@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css' )}}">
+    <title>Create Recipe</title>
+</head>
+<body>
+    <div id="create_recipe_main">
+        <div class="row1">
+            <!-- holds top half  -->
+            <div><h1>Add New Recipe</h1></div>
+            <div>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <div class="row2">
+            <!-- wholes form above both dives  -->
+            <div>
+            <form action="/add_recipe" method="post">
+                        <div class="row2_letCOl">
+                            <input class="form" type="hidden" name="user_id" value="{{session['id']}}">
+                            
+                            <label  for="name">Name:</label>
+                            <input class="form" type="text" name="name">
+                            <label  for="description">description:</label>
+                            <input class="form" type="text" name="description">
+                            <label  for="instructions">instructions:</label>
+                            <textarea name="instructions"cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="row2_righCOl">
+                            <label  for="date_made_on">Date Made On:</label>
+                            <input class="form" type="date" name="date_made_on">
+                            <legend>Under 30 Mins?</legend>
+                            <label  for="Yes">Yes</label>
+                            <input type="radio" name="under_30" value="Yes">
+                            <label  for="No">No</label>
+                            <input type="radio" name="under_30" value="No">
+
+                        </div>
+                    <input type="submit" value="Create Recipe" id="btn">
+        
+                    </form>
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <p>{{message}}</p>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %} 
+                </div>
+
+
+        </div>
+        </div>
+</body>
+</html>

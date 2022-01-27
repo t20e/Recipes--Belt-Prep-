@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css' )}}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div id="main_dash_container">
+        <div class="dashDiv1">
+            <div><h1>Welcome {{session['first_name']}}</h1></div>
+            <div>
+                <a href="/create">Create</a>
+                <a href="/logout">logout</a>
+            </div>
+        </div>
+        <div class="dashDiv2">
+            <p>These are all your saved recipes</p>
+        </div>
+        <div class="dashDiv3">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Under 30 Mins</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tbody>
+                    
+                        <!-- repeat to show all recipes -->
+                        {% for items in user.recipes%}
+                        <tr>
+                            <td>
+                           
+                                {{items.name}}
+                            </td>
+                            <td>
+                                {{items.under_30}}
+                            </td>
+                            <td>
+                                <a href="/view_instructions{{items.id}}">View Instructions</a>
+                                <a href="/edit{{items.id}}">Edit</a>
+                                <a href="/delete{{items.id}}">Delete</a>
+                            </td>
+                        </tr>
+                        {%endfor%}
+
+                    </tbody>
+                </thead>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

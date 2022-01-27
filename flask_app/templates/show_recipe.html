@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css' )}}">
+    <title>recipe instructions</title>
+</head>
+<body>
+    <div class="main_show_recipe">
+        <div class="row1">
+            <div>
+                <h1>welcome user_name</h1>
+            </div>
+          
+                <div>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <div class="row2">
+            <h2>  {{get_recipe[0].name}}</h2>
+        </div>
+        <div class="row3">
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Description:
+                        </th>
+                        <th>
+                            {{get_recipe[0].description}}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Under 30 mins:
+                        </td>
+                        <td>
+                            {{get_recipe[0].under_30}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Instructions
+                        </td>
+                        <td>
+                            {{get_recipe[0].instructions}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        Date Made:
+                        </td>
+                        <td>
+                            {{get_recipe[0].created_at}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+:root{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#main_div{
+    height: auto;
+    width: 900px;
+    margin: 0px auto;
+    margin-top: 20px;
+}
+.cotains_both_reg_login{
+    height: 600px;
+    width: 100%;
+    background-color: deepskyblue;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.contains_error_div{
+    height: 200px;
+    width: 100%;
+    background-color: deepskyblue;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+#register{
+    width: 45%;
+    height: 99%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login{
+    width: 45%;
+    height: 99%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h2{
+    text-align: center;
+}
+
+.form_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 2px;
+}
+.btn{
+    background-color: blue;
+    border-radius: 50px;
+    color: white;
+    margin-top: 20px;
+}
+
+#main_dash_container{
+    width: 600px;
+    height: auto;
+    background-color: deepskyblue;
+    margin: 0px auto;
+    border-radius: 20px;
+    padding: 10px;
+}
+.dashDiv1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dashDiv3{
+    display: flex;
+    justify-content: center;
+}
+td{
+    padding: 5px;
+}
+.contains_error_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.p{
+    color: red;
+    margin-bottom: -8px;
+}
+#create_recipe_main{
+    height: auto;
+    width: 800px;
+    background-color: deepskyblue;
+    margin: 0px auto;
+    border-radius: 20px;
+    padding: 5px;
+}
+.row1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.row2{
+    display: flex;
+    flex-direction: column;
+}
+
+.row2_letCOl{
+    margin: 0px auto;
+}
+.row2_righCOl{
+    margin: 0px auto;
+
+}
+.form{
+    display: block;
+}
+textarea{
+    display: block;
+}
+#btn{
+    border-radius: 50px;
+    width: auto;
+    color: white;
+    background-color: blue;
+    margin: 0px auto;
+}
+td{
+    padding: 10px;
+    text-align: center;
+}
+th{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.main_show_recipe{
+    height: auto;
+    width: 800px;
+    background-color: deepskyblue;
+    margin: 0px auto;
+    border-radius: 20px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.row1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+    align-items: center;
+}
+.row3{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
